@@ -1,92 +1,152 @@
 # JavaScript Foundations: A Self-Paced Learning Path
 
-Welcome to the ACM's JavaScript learning workshop. This guide is designed to take you from the absolute basics to building your first few projects.
+Welcome to the ACM JavaScript learning workshop! This guide is designed to take you from writing your first line of JavaScript to building interactive web apps, real-world tools, and connecting with live internet data.
 
-The goal is not to rush, but to understand the core concepts thoroughly. Take your time with each module, experiment with the code, and don't hesitate to ask questions.
-
----
-
-## Learning Modules & Resources
-
-This path is structured to build your knowledge step-by-step. Use the following resources to learn the concepts in each module.
-
-### Core Learning Resources
-
-* **Primary Video Course (English):** [JavaScript Tutorial for Beginners by freeCodeCamp (3.5 Hours)](https://www.youtube.com/watch?v=PkZNo7MFNFg)
-* **Primary Video Course (Hindi):** [JavaScript Crash Course by CodeWithHarry (3.5 Hours)](https://www.youtube.com/watch?v=hKB-YGF14SY)
-    * _Note: Both video courses cover the same core concepts and are approximately 3.5 hours long. Please watch the one you are most comfortable with._
-* **Reference & Examples w/ Live Testing:** [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
-* **In-Depth Reading:** [The Modern JavaScript Tutorial](https://javascript.info/)
+The goal is not to rush, but to learn by doing. Watch the video lessons, write the code yourself, build the projects step by step, and don't hesitate to ask questions.
 
 ---
 
-### The Path
+## 📚 Core Learning Resources
 
-**Module 1: The Absolute Basics**
-* **Topics:** What is JavaScript? Basic Syntax, Variables, Comments, and Data Types.
-* **Goal:** Understand how to write basic JavaScript and store information.
-
-**Module 2: Logic and Control Flow**
-* **Topics:** Operators (Arithmetic, Comparison), Conditional Statements (`if/else`, `switch`).
-* **Goal:** Learn how to make decisions in your code.
-
-**Module 3: Working with Collections**
-* **Topics:** Arrays, `for` loops, `while` loops.
-* **Goal:** Understand how to handle lists of data and repeat actions.
-
-**Module 4: Reusable Code**
-* **Topics:** Functions, Parameters, Arguments, `return`.
-* **Goal:** Learn to write clean, reusable blocks of code.
-
-**Module 5: Interacting with the Browser**
-* **Topics:** The DOM (Document Object Model), Selecting Elements (`querySelector`), Event Handling (click, mouseover), Manipulating HTML and CSS.
-* **Goal:** Make your web pages interactive.
+* **Primary Deep-Dive Video Course (22 Hours):** [JavaScript Tutorial Full Course - Beginner to Pro by SuperSimpleDev](https://www.youtube.com/watch?v=EerdGm-ehJQ)
+  * *Watch this for in-depth explanations on how web apps work, storing data, making interactive web pages, writing tests, and building a full online store.*
+* **Interactive & Modular Video Course (12 Hours):** [JavaScript Full Course by Bro Code](https://www.youtube.com/watch?v=lfmg-EJ8gm4)
+  * *Watch this for fast, easy-to-follow lessons on basic tools, buttons, animations, and small interactive apps.*
+* **Quick Reference & Examples:** [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+* **Detailed Reading:** [The Modern JavaScript Tutorial (javascript.info)](https://javascript.info/)
 
 ---
 
-## Projects
+## 🗺️ Step-by-Step Curriculum Roadmap
 
-Once you are comfortable with the learning modules, apply your knowledge by building these projects. They are listed in order of increasing difficulty. For each project, you will find a `script.js` file which contains only the algorithm. Your task is to write the code that implements the algorithm.
+### Phase 1: The Absolute Basics & Making Decisions
+* **Topics:** Storing information (variables), numbers, text (strings), true/false values (booleans), math, and writing simple rules (`if/else`, loops).
+* **Goal:** Understand how to give step-by-step instructions to the computer.
 
-1.  **Distance Conversion Tool:** A utility to convert values between km, m, and cm.
-2.  **Digital Clock:** A live clock that displays the current time.
-3.  **Random Color Changer:** An app that changes the background color on a button click.
-4.  **To-Do List:** A list where you can add and remove tasks.
-5.  **Simple Calculator:** A basic calculator that can perform simple arithmetic.
+### Phase 2: Reusable Code & Working with Lists
+* **Topics:** Writing reusable blocks of code (functions), handling lists of items (arrays), and looping through data.
+* **Goal:** Learn how to write clean code without repeating yourself.
+
+### Phase 3: Making Web Pages Interactive
+* **Topics:** Connecting JavaScript to HTML and CSS (the DOM), selecting buttons/inputs on the screen, listening for clicks or key presses, and changing what appears on the web page.
+* **Goal:** Make your web page react whenever a user clicks a button or types something.
+
+### Phase 4: Storing Data & Multi-File Projects
+* **Topics:** Grouping related data (objects), saving data in the browser so it doesn't disappear on refresh (`localStorage`), and splitting your code cleanly across multiple files (modules).
+* **Goal:** Build web pages that remember user choices even after closing the browser tab.
+
+### Phase 5: Organizing Bigger Codebases (OOP)
+* **Topics:** Using blueprints (classes) to create items with their own data and actions, and organizing code so data and visual design stay neat.
+* **Goal:** Keep your code organized as your projects get bigger and more complex.
+
+### Phase 6: Working with the Internet & Checking for Bugs
+* **Topics:** Fetching live data from online services (`fetch`, APIs), handling loading times (`async/await`), and writing automatic checks (testing) to verify your code works properly.
+* **Goal:** Connect your web apps to live information from the web and catch errors automatically.
 
 ---
 
-## Getting Started with Projects
+## ✅ Progress Checklist
 
-To share your work and get feedback, we will use the standard **Fork & Pull Request** workflow. This is a fundamental skill when working on a collaborative team.
+Use this checklist to tick off topics as you learn them:
 
-**Step 1: Fork the Repository**
-* Navigate to the main ACM repository on GitHub.
-* Click the **"Fork"** button in the top-right corner. This creates your own personal copy of the repository under your GitHub account.
+### **1. Core Basics & Decisions**
+- [ ] Storing values in variables (`let`, `const`)
+- [ ] Text (`strings`), Numbers, and True/False (`booleans`)
+- [ ] Basic math (`+`, `-`, `*`, `/`) and working in cents for money
+- [ ] Comparing values (`===`, `!==`, `>`, `<`)
+- [ ] Making decisions with `if`, `else if`, and `else`
+- [ ] Repeating actions using `for` and `while` loops
 
-**Step 2: Clone Your Forked Repository**
-* On your GitHub account, go to the repository you just forked.
-* Click the green **"< > Code"** button and copy the HTTPS or SSH URL.
-* Open your terminal or command prompt and run the following command to download it to your computer:
-    `git clone <your_forked_repository_url>`
+### **2. Text, Numbers & Date Helpers**
+- [ ] Combining text and variables easily using template strings (`` `Hello ${name}` ``)
+- [ ] Helpful text shortcuts (`trim()`, `slice()`, `toLowerCase()`, `toUpperCase()`)
+- [ ] Generating random numbers (`Math.random()`, `Math.floor()`)
+- [ ] Getting and displaying the current date and time (`Date` object)
 
-**Step 3: Work on the Projects**
-* Navigate into the cloned folder: `cd <repository_folder_name>`
-* Open the folder in your code editor (like VS Code).
-* Choose a project, open its `script.js` file, and start writing the code to implement the algorithm.
+### **3. Functions (Reusable Actions)**
+- [ ] Creating and calling basic functions
+- [ ] Modern arrow functions (`() => {}`)
+- [ ] Passing information into functions (parameters) and getting values out (`return`)
+- [ ] Running functions in the future or after a delay (`setTimeout()`, `setInterval()`)
 
-**Step 4: Save and Push Your Changes**
-* Once you've made progress or completed a project, you need to save your work back to your forked repository on GitHub.
-* Run these commands in your terminal from the project directory:
-    ```bash
-    # Stage your changes
-    git add .
+### **4. Lists & Data Groups**
+- [ ] Creating lists (`arrays`) and adding/removing items (`push()`, `splice()`)
+- [ ] Looping through lists easily (`forEach()`, `map()`, `filter()`)
+- [ ] Grouping related information (`objects`) with key-value pairs
+- [ ] Converting data to and from text format (`JSON.stringify()`, `JSON.parse()`)
 
-    # Commit your changes with a descriptive message
-    git commit -m "Completed the Distance Converter project"
+### **5. Interactive Web Pages (The DOM)**
+- [ ] Finding elements on the screen (`document.querySelector()`)
+- [ ] Changing text and HTML on the screen (`textContent`, `innerHTML`)
+- [ ] Adding and removing CSS styling with JavaScript (`classList.add()`, `classList.remove()`)
+- [ ] Responding to user clicks and typing (`addEventListener`, `click`, `keydown`)
+- [ ] Generating dynamic HTML directly from your data list
 
-    # Push the changes to your fork on GitHub
-    git push origin main
-    ```
+### **6. Saving Data in the Browser**
+- [ ] Saving data so it stays on page reload (`localStorage.setItem()`, `localStorage.getItem()`)
+- [ ] Deleting saved data (`localStorage.removeItem()`, `localStorage.clear()`)
+- [ ] Reading web address parameters (URL search params)
 
-**Step 5: Create a Pull Request**
+### **7. Multi-File Projects & Classes**
+- [ ] Sharing code between different files (`import` and `export`)
+- [ ] Creating object blueprints (`classes` and `constructor()`)
+- [ ] Sharing features between blueprints (`extends` and `super`)
+
+### **8. Live Web Data & Testing**
+- [ ] Fetching live data from online services using `fetch()`
+- [ ] Waiting for web requests to finish using `async` and `await`
+- [ ] Catching unexpected connection errors using `try...catch`
+- [ ] Running automatic checks with a testing tool (Jasmine)
+- [ ] Tracking changes with Git (save, commit, push, and Pull Requests)
+
+---
+
+## 🛠️ Progressive Project Tracks
+
+Here is the list of projects you will build. Each project is fully coded line-by-line inside the video tutorials so you can follow along easily!
+
+| Project | What You Are Building |
+| :--- | :--- |
+| **1. Number Counter & Temperature Converter** | An interactive app with **Plus**, **Minus**, and **Reset** buttons to increase or decrease a number, plus a tool that converts temperatures between Celsius and Fahrenheit. |
+| **2. Dice Roller & Random Password Generator** | A game that rolls random dice when you click a button, and a tool that creates secure, randomized passwords based on rules you choose (like length, numbers, and symbols). |
+| **3. Digital Clock & Precision Stopwatch** | A live digital clock that updates every second to show your current time, plus a working stopwatch with **Start**, **Stop**, and **Reset** buttons. |
+| **4. To-Do List Tracker** | A task list app where you can type in a task and due date, click **Add** to display it on the page, click **Delete** to remove it, and have your tasks stay saved even if you refresh the browser. |
+| **5. On-Screen Calculator** | A clickable on-screen calculator that lets you type numbers, add/subtract/multiply/divide, clear the screen, and calculate the final total. |
+| **6. Rock-Paper-Scissors Game (with Autoplay)** | A full game where you play against the computer, keep score (Wins, Losses, Ties) across page refreshes, use keyboard shortcuts (`R`, `P`, `S`), or turn on **Autoplay** to let the computer play itself. |
+| **7. Live Weather Forecast App** | A weather app where you type any city name in a search box, click **Get Weather**, and fetch live forecast data from the internet to show the real-time temperature, humidity, and weather emoji. |
+| **8. Mini Online Store (Amazon Clone)** | A complete multi-page online shopping website with a product catalog, interactive cart, delivery date selectors, price calculations, and automatic tests to verify the code works. |
+
+---
+
+## 🚀 Getting Started with Projects (GitHub Workflow)
+
+To submit your project work and get feedback, follow this standard step-by-step workflow:
+
+### **Step 1: Fork the Repository**
+* Open the ACM JavaScript repository on GitHub.
+* Click the **Fork** button in the top-right corner to make a copy under your own GitHub account.
+
+### **Step 2: Download to Your Computer**
+* Open your terminal or command prompt and clone your copy:
+  ```bash
+  git clone <your_forked_repository_url>
+  cd <repository_folder_name>
+  
+### **Step 3: Create a Working Branch**
+* Create a separate branch for each project you work on:
+  ```bash
+  git checkout -b feature/project-name
+  
+### **Step 4: Build and Test**
+* Open the folder in VS Code.
+* Build your project and preview your work live in your browser using the Live Server extension.
+  
+### **Step 5: Save and push your finished code to GitHub:**
+  ```bash
+   git add .
+   git commit -m "Completed project: To-Do List"
+   git push origin feature/project-name
+```
+### **Step 6: Submit a Pull Request**
+* Go back to your GitHub repository in your browser.
+* Click Compare & pull request, write a brief description of what you completed, and click Submit.
