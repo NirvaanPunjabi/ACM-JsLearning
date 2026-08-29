@@ -122,31 +122,42 @@ Here is the list of projects you will build. Each project is fully coded line-by
 
 To submit your project work and get feedback, follow this standard step-by-step workflow:
 
-### **Step 1: Fork the Repository**
-* Open the ACM JavaScript repository on GitHub.
-* Click the **Fork** button in the top-right corner to make a copy under your own GitHub account.
-
-### **Step 2: Download to Your Computer**
-* Open your terminal or command prompt and clone your copy:
+### **Step 1: Clone the Starter Repository**
+* Open your terminal or command prompt and clone the workshop repository to your local machine:
   ```bash
-  git clone <your_forked_repository_url>
+  git clone https://github.com/MPSTME-ACM/js-workshop.git
   cd <repository_folder_name>
-  
-### **Step 3: Create a Working Branch**
-* Create a separate branch for each project you work on:
+  ```
+
+### **Step 2: Work on the Projects**
+* Open the cloned project folder in **VS Code**.
+* Read the algorithm instructions inside each project's `script.js` file and implement the required code.
+* Use the **Live Server** extension in VS Code to preview and test your applications in real time.
+
+### **Step 3: Create a New Repository on Your GitHub**
+* Go to [GitHub.com](https://github.com) and log in.
+* Click the **"+"** icon in the top-right corner and select **New repository**.
+* Name your repository (e.g., `acm-javascript-projects`), choose **Public**, and click **Create repository** (do not initialize with a README/license).
+
+### **Step 4: Point Your Local Code to Your GitHub Repository**
+* In your terminal inside the project directory, update your Git remote origin to point to your new personal repository:
   ```bash
-  git checkout -b feature/project-name
-  
-### **Step 4: Build and Test**
-* Open the folder in VS Code.
-* Build your project and preview your work live in your browser using the Live Server extension.
-  
-### **Step 5: Save and push your finished code to GitHub:**
+  # Check your current remote
+  git remote -v
+
+  # Update the remote URL to your new repository
+  git remote add origin https://github.com/<your-username>/<your-new-repo-name>.git
+  ```
+
+### **Step 5: Save, Commit, and Push Your Work**
+* Stage all your completed project files, create a commit, and push the code to your GitHub account:
   ```bash
-   git add .
-   git commit -m "Completed project: To-Do List"
-   git push origin feature/project-name
-```
-### **Step 6: Submit a Pull Request**
-* Go back to your GitHub repository in your browser.
-* Click Compare & pull request, write a brief description of what you completed, and click Submit.
+  git add .
+  git commit -m "Completed all JavaScript workshop projects"
+  git push -u origin main
+  ```
+
+### **Step 6: Submit via Tech HUB**
+* Visit your repository page on GitHub (e.g., `https://github.com/<your-username>/<your-new-repo-name>`).
+* Verify that all your project folders, HTML/CSS/JS files, and commits are visible.
+* Copy your repository URL and paste it into the **ACM Submission Form on Tech HUB**
