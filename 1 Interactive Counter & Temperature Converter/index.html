@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>JS ACM Assignment 1 - Number Counter & Temperature Converter</title>
+        <style>
+            /*
+╭──┬───────────┬───────┬───────┬──────────┬───────┬───────┬───────┬───────┬────────┬──────┬──────┬────────────╮
+│id│   name    │  bg   │accent │text_color│ muted │ card  │border │is_void│is_extra│active│edited│is_generated│
+╞══╪═══════════╪═══════╪═══════╪══════════╪═══════╪═══════╪═══════╪═══════╪════════╪══════╪══════╪════════════╡
+│ 1│lime       │#050505│#b4dd1e│#eaeaea   │#888   │#0e0e0e│#1a1a1a│      0│       0│     0│     0│           0│
+│ 2│mint       │#0b0b0c│#6ee7b7│#f5f5f5   │#9ca3af│#111113│#232326│      0│       0│     0│     0│           0│
+│ 3│blue       │#0a0f1a│#60a5fa│#e5e7eb   │#94a3b8│#111827│#1f2933│      0│       0│     0│     0│           0│
+│ 4│rose       │#0d0a0b│#fb7185│#f5f5f5   │#9ca3af│#121012│#261e22│      0│       0│     0│     0│           0│
+│ 5│amber      │#0b0a08│#fbbf24│#f5f5f5   │#9ca3af│#12110e│#28251e│      0│       0│     0│     0│           0│
+│ 6│mono       │#0a0a0a│#ffffff│#f5f5f5   │#777   │#111111│#222   │      0│       0│     0│     0│           0│
+│ 7│cyber      │#08060f│#c084fc│#e5e7eb   │#8b8b9e│#0f0d16│#1e1b2e│      0│       0│     0│     0│           0│
+│ 8│crimson    │#0a0606│#ef4444│#f5f5f5   │#888   │#110c0c│#281a1a│      0│       0│     0│     0│           0│
+│ 9│violet     │#0a0612│#a78bfa│#f5f5f5   │#a5a3b8│#130d1f│#241b35│      0│       0│     0│     0│           0│
+│10│cyan       │#04090c│#22d3ee│#e6f6fa   │#7e93a0│#0a1418│#152229│      0│       0│     0│     0│           0│
+│11│void_deep  │#08050f│#5d1fa9│#e8e5f0   │#7a7690│#0d0a15│#1c1630│      1│       0│     0│     0│           0│
+│12│void_dusk  │#0a0812│#7346ab│#e5e3ec   │#807c92│#0f0d18│#201c32│      1│       0│     0│     0│           0│
+│13│void_vivid │#09060e│#6f13e5│#eae7f5   │#7d7996│#0e0b17│#1e1935│      1│       0│     0│     0│           0│
+│14│void_glow  │#08060f│#9f58fc│#eceaf5   │#8a87a0│#0f0d18│#221d38│      1│       0│     0│     0│           0│
+│15│void_abyss │#000000│#5d1fa9│#e8e5f0   │#7a7690│#080510│#18122a│      1│       0│     1│     0│           0│
+│18│generated_1│#161412│#c6b0af│#f0f0f0   │#a3978f│#171c1a│#37402d│      0│       0│     0│     0│           1│
+╰──┴───────────┴───────┴───────┴──────────┴───────┴───────┴───────┴───────┴────────┴──────┴──────┴────────────╯
+            */
+            :root {
+                --Accent: #5d1fa9;
+                --Background: #000000;
+                --TextMain: #e8e5f0;
+                --TextMuted: #7a7690;
+                --Border: #18122a;
+            }
+            html, body {
+                margin: 0px;
+                background-color: var(--Background);
+                color: var(--TextMain);
+                width: 100%;
+                height: 100%;
+            }
+            .MainBody {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+            }
+            .NumberCounter {
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+            .PageSeperator {
+                height: 5px;
+                width: 100%;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                background-color: var(--Accent);
+            }
+            .TemperatureConverter {
+                flex: 1;
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+            }
+            .Btn {
+                border-radius: 6px;
+                border: 1px solid var(--Accent);
+                color: var(--Accent);
+                background-color: var(--Background);
+                display: inline-flex; 
+                align-items: center;
+                justify-content: center;
+                gap: 0.4rem;
+            }
+            .Btn:hover {
+                border-color: var(--Background);
+                color: var(--Background);
+                background-color: var(--Accent);
+            }
+            .Btn.Filled{
+                border: 1px solid var(--Background);
+                color: var(--Background);
+                background-color: var(--Accent);
+            }
+            .Btn.Filled.Red { background: #f87171; color: var(--Background); border-color: var(--Background); }
+            .Btn.Filled.Red:hover { background: var(--Background); color: #f87171; border-color: #f87171; }
+            .Btn.Filled:hover {
+                border-color: var(--Accent);
+                color: var(--Accent);
+                background-color: var(--Background);
+            }
+            .ButtonFrame {
+                display: flex;
+                flex: 1;
+                width: 100%;
+                gap: 1%;
+                box-sizing: border-box;
+                justify-content: center;
+            }
+
+            .Field {
+                width: auto;
+                height: 1.17rem;
+                background: #000000; 
+                border: 1px solid var(--TextMuted); 
+                border-radius: 4px;
+                padding: 0.5rem 0.7rem; 
+                color: #e8e5f0; 
+                font-size: 0.9rem; 
+                font-family: inherit;
+                outline: none;
+                margin-right: 5px;
+            }
+            .Field:hover { border-color: var(--Accent); }
+            .Field:focus { border-color: var(--Accent); }
+            .h3.Red { color: #f87171; }
+        </style>
+    </head>
+    <body>
+        <div class="MainBody" id="MainFrame">
+            <div class="NumberCounter" id="NumberCounterBody">
+                <h2 style="text-align: center;">Number Counter</h2>
+                <h3 id="NumberDisplay" style="text-align: center; margin-bottom: 5%;">Current count: 0</h3>
+                <div class="ButtonFrame">
+                    <button id="IncrementCount" class="Btn" style="width: calc(calc(100%)/4); height: 50px;">Increase Count</button>
+                    <button id="ResetCount" class="Btn Filled Red" style="width: calc(calc(100%)/4); height: 50px;">Reset Count</button>
+                    <button id="DecrementCount" class="Btn" style="width: calc(calc(100%)/4); height: 50px;">Decrease Count</button>
+                </div>
+            </div>
+            <div class="PageSeperator" id="PageSeperator"></div>
+            <div class="TemperatureConverter" id="TemperatureConverterBody">
+                <h2 style="text-align: center;">Temperature Converter</h2>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <h3 style="margin-right: 10px;">Enter temperature to convert: </h3>
+                    <input class="Field" id="TemperatureInput"></input>
+                    <h3 id ="InputUnit" style="margin-right: 5px;">°? → </h3>
+                    <h3 id="TemperatureResult"> XX°?</h3>
+                </div>
+                <div class="ButtonFrame">
+                    <button id="CelciusToFahrenheit" class="Btn" style="width: calc(calc(100%)/4); height: 50px;">°C → °F</button>
+                    <button id="FahrenheitToCelcius" class="Btn" style="width: calc(calc(100%)/4); height: 50px;">°F → °C</button>
+                </div>
+                <h3 class="h3 Red" style="text-align: center;" id="ErrorMessage"></h2>
+            </div>
+        </div>
+    </body>
+    <script>
+        /*
+        ALGORITHM: Number Counter & Temperature Converter
+
+        PART 1: Number Counter
+        1. SETUP:
+        - Declare a variable `count` initialized to 0.
+        - Get the label/display element showing the count value.
+        - Get the "Increase", "Decrease", and "Reset" button elements.
+
+        2. EVENT LISTENERS & LOGIC:
+        - When "Increase" is clicked:
+            - Increment `count` by 1.
+            - Update the label's text content with `count`.
+        - When "Decrease" is clicked:
+            - Decrement `count` by 1.
+            - Update the label's text content with `count`.
+        - When "Reset" is clicked:
+            - Set `count` to 0.
+            - Update the label's text content with `count`.
+
+        PART 2: Temperature Converter
+        1. SETUP:
+        - Get the number input element for the temperature value.
+        - Get the radio button elements for "to Fahrenheit" and "to Celsius".
+        - Get the "Submit" button element.
+        - Get the paragraph element where the result will be displayed.
+
+        2. CONVERSION LOGIC (inside submit button click handler):
+        - Read the numeric value from the input field.
+        - Check which radio button is selected using its `.checked` property.
+        - If "to Fahrenheit" is selected:
+            - Calculate: (temp * 9 / 5) + 32.
+            - Format with `.toFixed(1)` and display result as `°F`.
+        - Else if "to Celsius" is selected:
+            - Calculate: (temp - 32) * (5 / 9).
+            - Format with `.toFixed(1)` and display result as `°C`.
+        - Else:
+            - Display an error message asking the user to select a unit.
+        */
+        // WRITE YOUR CODE BELOW:
+        /*
+        =============================================================================
+        Part 1 - Number Counter
+        =============================================================================
+        */
+        let NumberDisplay = document.getElementById("NumberDisplay");
+        let IncrementButton = document.getElementById("IncrementCount");
+        let ResetCount = document.getElementById("ResetCount");
+        let DecrementCount = document.getElementById("DecrementCount");
+
+        let Count = 0;
+
+        IncrementButton.addEventListener("click", () => {
+            Count += 1;
+            NumberDisplay.textContent = `Current count: ${Count}`
+        })
+        ResetCount.addEventListener("click", () => {
+            Count = 0;
+            NumberDisplay.textContent = `Current count: ${Count}`
+        })
+        DecrementCount.addEventListener("click", () => {
+            Count -= 1;
+            NumberDisplay.textContent = `Current count: ${Count}`
+        })
+        /*
+        =============================================================================
+        Part 2 - Temperature Converter
+        =============================================================================
+        */
+        let CToFButton = document.getElementById("CelciusToFahrenheit");
+        let FToCButton = document.getElementById("FahrenheitToCelcius");
+        let InputUnitDisplay = document.getElementById("InputUnit");
+        let TemperatureDisplay = document.getElementById("TemperatureResult");
+        let ErrorDisplay = document.getElementById("ErrorMessage");
+        
+        CToFButton.addEventListener("click", () => {
+            let Input = document.getElementById("TemperatureInput").value;
+            if (Input === "") { ErrorDisplay.textContent = "Empty input."; return; }
+            if (Number.isNaN(Number(Input))) { ErrorDisplay.textContent = "Input not a number."; return; }
+            ErrorDisplay.textContent = "";
+            let Result = ((Input * 9/5) + 32).toFixed(1);
+            InputUnitDisplay.textContent = `°C → `;
+            TemperatureDisplay.textContent = ` ${Result}°F`;
+        })
+        FToCButton.addEventListener("click", () => {
+            let Input = document.getElementById("TemperatureInput").value;
+            if (Input === "") { ErrorDisplay.textContent = "Empty input."; return; }
+            if (Number.isNaN(Number(Input))) { ErrorDisplay.textContent = "Input not a number."; return; }
+            ErrorDisplay.textContent = "";
+            let Result = ((Input - 32) * (5/9)).toFixed(1);
+            InputUnitDisplay.textContent = `°F → `;
+            TemperatureDisplay.textContent = ` ${Result}°C`;
+        })
+    </script>
+</html>
